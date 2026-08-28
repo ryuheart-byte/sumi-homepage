@@ -104,6 +104,12 @@
   .nav-links a{ color:var(--ink); text-decoration:none; white-space:nowrap; padding-bottom:3px; border-bottom:2px solid transparent; transition:color .2s,border-color .2s; }
   .nav-links a:hover{ color:var(--teal); border-color:var(--teal); }
   .nav-cta{ flex:0 0 auto; }
+  .nav-toggle{
+    display:none; width:40px; height:40px; padding:0; flex:0 0 auto;
+    border:1px solid var(--line); border-radius:8px; background:transparent;
+    color:var(--ink-strong); cursor:pointer; align-items:center; justify-content:center;
+  }
+  .nav-toggle svg{ width:20px; height:20px; }
 
   /* ---------- buttons ---------- */
   .btn{
@@ -281,7 +287,26 @@
   @media (max-width:640px){
     .cards{ grid-template-columns:1fr; }
     .reviews{ grid-template-columns:1fr; }
-    .nav-links{ display:none; }
+    .nav-toggle{ display:inline-flex; }
+    .nav-brand small{ display:none; }
+    .nav-right{ gap:.55rem; }
+    .nav-links{
+      position:absolute; left:0; right:0; top:100%;
+      flex-direction:column; gap:0; align-items:stretch;
+      background:var(--bg); border-bottom:1px solid var(--line);
+      padding:0; max-height:0; overflow:hidden;
+      transition:max-height .28s ease;
+    }
+    .nav.open .nav-links{ max-height:70vh; overflow-y:auto; }
+    .nav-links li{ width:100%; }
+    .nav-links a{
+      display:block; padding:.9rem 24px; font-size:.95rem;
+      border-bottom:1px solid var(--line); border-left:2px solid transparent;
+    }
+    .nav-links a:hover{ color:var(--teal); border-color:var(--line); border-left-color:var(--teal); background:var(--bg-alt); }
+  }
+  @media (max-width:640px) and (prefers-reduced-motion:reduce){
+    .nav-links{ transition:none; }
   }
   @media (max-width:560px){
     .timeline li{ grid-template-columns:1fr; gap:.15rem; }
@@ -295,7 +320,10 @@
   <div class="inner nav-inner">
     <a class="nav-brand" href="#top">정수미 <small>음악치료</small></a>
     <div class="nav-right">
-      <ul class="nav-links">
+      <button class="nav-toggle" type="button" aria-label="메뉴" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
         <li><a href="#about">소개</a></li>
         <li><a href="#signals">신호</a></li>
         <li><a href="#programs">프로그램</a></li>
@@ -653,6 +681,22 @@
     });
   }, { threshold:0.1, rootMargin:'0px 0px -8% 0px' });
   els.forEach(function(e){ io.observe(e); });
+})();
+
+(function(){
+  var nav = document.querySelector('.nav');
+  var btn = document.querySelector('.nav-toggle');
+  if(!nav || !btn) return;
+  btn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('.nav-links a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
 })();
 </script>
 </body>

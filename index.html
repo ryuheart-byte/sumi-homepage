@@ -18,8 +18,8 @@
 
 <style>
   :root{
-    --bg:#FFFFFF;
-    --bg-alt:#F1F7F4;
+    --bg:#FCFAF4;
+    --bg-alt:#F4F1E7;
     --tint:#E4F2EC;
     --ink:#394744;
     --ink-strong:#1E3A33;
@@ -39,6 +39,16 @@
     --fs-h2:clamp(1.5rem,3.4vw,2rem);
     --fs-statement:clamp(1.55rem,3.6vw,2.4rem);
     --pad-sec:clamp(3.5rem,8vw,6rem);
+
+    /* 배경 사진 자리표시자 — 실제 사진으로 교체: url("assets/파일명.jpg") */
+    --photo-1:
+      radial-gradient(1100px 520px at 18% 12%, #47967f 0%, rgba(71,150,127,0) 60%),
+      radial-gradient(900px 520px at 88% 85%, #2b5f56 0%, rgba(43,95,86,0) 55%),
+      linear-gradient(135deg, #356e62, #23433f);
+    --photo-2:
+      radial-gradient(900px 500px at 80% 15%, #4a9a86 0%, rgba(74,154,134,0) 58%),
+      radial-gradient(1000px 600px at 10% 90%, #2a5a52 0%, rgba(42,90,82,0) 55%),
+      linear-gradient(120deg, #2f665c, #223f3b);
   }
 
   @media (prefers-color-scheme: dark){
@@ -155,7 +165,7 @@
   }
 
   /* ---------- hero ---------- */
-  .hero{ background:#2C7A6B; color:#fff; text-align:center; padding-block:clamp(4rem,10vw,7rem) 2.5rem; overflow:hidden; }
+  .hero{ background:radial-gradient(900px 420px at 50% -12%, rgba(255,255,255,.12), rgba(255,255,255,0) 70%), #2C7A6B; color:#fff; text-align:center; padding-block:clamp(4rem,10vw,7rem) 2.5rem; overflow:hidden; }
   .hero .eyebrow{ color:#CFEDE3; }
   .hero h1{
     font-family:var(--kr); font-weight:400; font-size:var(--fs-hero);
@@ -243,8 +253,27 @@
   .rv p{ margin:.55rem 0 .7rem; font-family:var(--kr); font-size:1rem; line-height:1.7; color:var(--ink-strong); }
   .rv cite{ font-style:normal; font-size:.8rem; color:var(--ink-faint); }
 
+  /* ---------- photo bands ---------- */
+  .photo-band{
+    position:relative; color:#fff; text-align:center;
+    padding-block:clamp(4rem,10vw,7rem);
+    background-image:linear-gradient(180deg, rgba(18,36,32,.55), rgba(18,36,32,.62)), var(--photo-1);
+    background-size:cover; background-position:center; background-repeat:no-repeat;
+  }
+  .photo-band .eyebrow{ color:#CFEDE3; }
+  .photo-band p.big{
+    font-family:var(--kr); font-weight:400; font-size:var(--fs-statement);
+    line-height:1.7; letter-spacing:-.01em; color:#fff; margin:.4rem auto 0;
+    max-width:24ch; text-wrap:balance;
+  }
+
   /* ---------- cta ---------- */
-  .cta{ background:#2C7A6B; color:#fff; text-align:center; padding-block:clamp(3rem,7vw,4.5rem); }
+  .cta{
+    position:relative; color:#fff; text-align:center;
+    padding-block:clamp(3.4rem,7vw,5rem);
+    background-image:linear-gradient(180deg, rgba(18,36,32,.62), rgba(18,36,32,.66)), var(--photo-2);
+    background-size:cover; background-position:center; background-repeat:no-repeat;
+  }
   .cta p{ font-family:var(--kr); font-weight:700; font-size:clamp(1.3rem,3vw,1.85rem); line-height:1.5; margin:0 0 1.6rem; color:#fff; text-wrap:balance; }
 
   /* ---------- contact ---------- */
@@ -272,6 +301,36 @@
   .foot{ background:var(--bg); border-top:1px solid var(--line); padding:2.6rem 0 3rem; text-align:center; }
   .foot .mark{ width:8px; height:8px; border-radius:50%; background:var(--teal); display:inline-block; margin-bottom:.9rem; }
   .foot p{ margin:.2rem 0; font-size:.82rem; color:var(--ink-faint); }
+
+  /* ---------- fixed quick-CTA bar (mmcare.kr style) ---------- */
+  .fixedcta{
+    position:fixed; left:0; right:0; bottom:0; z-index:40;
+    display:flex; align-items:stretch;
+    background:var(--bg); border-top:1px solid var(--line);
+    box-shadow:0 -6px 22px rgba(0,0,0,.10);
+  }
+  .fixedcta a{
+    display:flex; align-items:center; justify-content:center; gap:.45rem;
+    padding:1.05rem .6rem; font-family:var(--font); font-weight:700; font-size:.95rem;
+    letter-spacing:.01em; text-decoration:none;
+  }
+  .fixedcta-apply{ flex:1 1 auto; background:var(--teal); color:var(--on-teal); }
+  .fixedcta-apply:hover{ background:var(--teal-deep); }
+  .fixedcta-call{ flex:0 0 38%; background:var(--bg); color:var(--ink-strong); border-left:1px solid var(--line); }
+  .fixedcta-call:hover{ background:var(--bg-alt); }
+  .fixedcta-call svg{ width:17px; height:17px; }
+  body{ padding-bottom:76px; }
+  @media (min-width:721px){
+    .fixedcta{
+      left:50%; right:auto; bottom:22px; transform:translateX(-50%);
+      width:min(520px, calc(100% - 48px));
+      border:1px solid var(--line); border-radius:999px; overflow:hidden;
+      box-shadow:0 12px 34px rgba(0,0,0,.16);
+    }
+    .fixedcta-call{ flex:0 0 42%; }
+    body{ padding-bottom:0; }
+    .foot{ padding-bottom:6rem; }
+  }
 
   /* ---------- reveal ---------- */
   [data-reveal]{ opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease; }
@@ -431,6 +490,13 @@
           <p>현장에 맞는 음악치료 커리큘럼을 설계하고 운영을 돕습니다.</p>
         </article>
       </div>
+    </div>
+  </section>
+
+  <section class="photo-band">
+    <div class="inner" data-reveal>
+      <p class="eyebrow">A Quiet Room</p>
+      <p class="big">음악이 머무는 자리에서,<br>마음이 한 박자 쉬어갑니다.</p>
     </div>
   </section>
 
@@ -623,6 +689,14 @@
     <p>음악으로 마음을 어루만지는 시간</p>
   </div>
 </footer>
+
+<div class="fixedcta" aria-label="빠른 문의">
+  <a class="fixedcta-apply" href="#contact">무료체험 신청하기</a>
+  <a class="fixedcta-call" href="tel:01077620509">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.5 3.5a5 5 0 0 1 5 5M14 7a2.5 2.5 0 0 1 2.5 2.5M20.5 16.3v2.6a1.8 1.8 0 0 1-2 1.8 17.6 17.6 0 0 1-7.7-2.7 17.3 17.3 0 0 1-5.3-5.3A17.6 17.6 0 0 1 2.8 3a1.8 1.8 0 0 1 1.8-2h2.6a1.8 1.8 0 0 1 1.8 1.5c.1.9.3 1.7.6 2.5a1.8 1.8 0 0 1-.4 1.9l-1.1 1.1a14 14 0 0 0 5.3 5.3l1.1-1.1a1.8 1.8 0 0 1 1.9-.4c.8.3 1.6.5 2.5.6a1.8 1.8 0 0 1 1.5 1.8Z"/></svg>
+    <span>전화걸기</span>
+  </a>
+</div>
 
 <script>
 (function(){

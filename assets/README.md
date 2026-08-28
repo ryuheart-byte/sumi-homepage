@@ -8,11 +8,11 @@
 
 | 파일 이름 | 내용 |
 |-----------|------|
-| `studio-1.jpg` | 핸드벨·타악기 앞에 앉아 있는 사진 |
-| `studio-2.jpg` | 기타를 연주하는 사진 |
+| `studio-1.webp` | 핸드벨·타악기 앞에 앉아 있는 사진 (1440×1075) |
+| `studio-2.webp` | 기타를 연주하는 사진 (1440×1008) |
 
-- 사진을 더 추가하려면 `index.html`의 `<ul class="carousel-track">` 안에 `<li class="carousel-slide"><img src="assets/studio-3.jpg" alt="..."></li>` 를 추가하면 됩니다. (슬라이드 개수·점 인디케이터는 자동)
-- 저장 후 `git add assets && git commit -m "add studio photos"` 하면 자동으로 배포됩니다.
+- 사진을 더 추가하려면 `index.html`의 `<ul class="carousel-track">` 안에 `<li class="carousel-slide"><img src="assets/studio-3.webp" alt="..."></li>` 를 추가하면 됩니다. (슬라이드 개수·점 인디케이터는 자동)
+- 사진 교체 시 같은 파일 이름으로 덮어쓰고 `git commit` 하면 자동 배포됩니다.
 
 ## 사진 교체 방법
 

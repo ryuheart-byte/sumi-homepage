@@ -43,5 +43,5 @@
 
 ## 크레딧
 
-- 인스타그램: [@the_go_woon_](https://www.instagram.com/the_go_woon_)
+- 인스타그램: [@balbina__j](https://www.instagram.com/balbina__j)
 - 자격: (사)한국음악치료학회 임상음악전문가 1급 (자격번호 제593호)

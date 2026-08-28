@@ -4,327 +4,284 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>정수미 · 음악치료 | 마음에 닿는 소리</title>
-<meta name="description" content="임상음악전문가 1급 정수미. 심상음악치료(GIM)로 마음의 온전한 회복과 성장을 돕습니다. 개인·그룹 음악치료, 기관 출강·강의, 상담 예약 안내.">
+<meta name="description" content="임상음악전문가 1급 정수미. 심상음악치료(GIM)로 자율신경의 균형과 마음의 회복을 돕습니다. 개인·그룹 음악치료, 기관 출강·강의, 상담 안내.">
 <meta name="author" content="정수미 (Jeong Soo Mee)">
-
 <meta property="og:type" content="website">
 <meta property="og:title" content="정수미 · 음악치료 | 마음에 닿는 소리">
-<meta property="og:description" content="임상음악전문가 1급 정수미. 심상음악치료(GIM)로 마음의 온전한 회복과 성장을 돕습니다.">
+<meta property="og:description" content="심상음악치료(GIM)로 마음의 회복과 성장을 돕습니다. 임상음악전문가 1급 정수미.">
 <meta property="og:locale" content="ko_KR">
-
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%B6%3C/text%3E%3C/svg%3E">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
 
 <style>
   :root{
-    --ground:#F3EFE1;      /* page */
-    --band:#E8E1CA;        /* signature warm sand band */
-    --surface:#FDFBF4;     /* cards */
-    --ink:#213039;
-    --ink-soft:#4C5A62;
-    --ink-faint:#8E897A;
-    --line:#D9CFB4;
-    --accent:#285A71;      /* deep teal */
-    --accent-deep:#1E4656;
-    --slate:#2F4B5E;
-    --on-accent:#F1ECDD;
+    --bg:#FFFFFF;
+    --bg-alt:#F8F8F3;
+    --tint:#F3F1E8;
+    --ink:#3B3B3B;
+    --ink-strong:#1D2F39;
+    --ink-faint:#8C8C82;
+    --line:#E7E4D8;
+    --teal:#285A71;
+    --teal-deep:#1F4759;
+    --sand:#CEC5A9;
+    --sand-ink:#6E6749;
+    --on-teal:#FFFFFF;
 
-    --serif:"Gowun Batang","Nanum Myeongjo",serif;
-    --sans:"Noto Sans KR",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --latin:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --kr:"Noto Sans KR","Inter",system-ui,sans-serif;
+    --font:"Inter","Noto Sans KR",system-ui,-apple-system,sans-serif;
 
-    --fs-hero:clamp(2.35rem,6.2vw,3.5rem);
-    --fs-h2:clamp(1.55rem,3.4vw,2rem);
+    --fs-hero:clamp(1.9rem,4.6vw,3rem);
+    --fs-h2:clamp(1.5rem,3.4vw,2rem);
+    --fs-statement:clamp(1.55rem,3.6vw,2.4rem);
+    --pad-sec:clamp(3.5rem,8vw,6rem);
   }
 
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --ground:#15232A;
-      --band:#1B2C33;
-      --surface:#1E2F37;
-      --ink:#ECE7D6;
-      --ink-soft:#B4B7AE;
-      --ink-faint:#7F8B86;
-      --line:#33454E;
-      --accent:#7FB4C6;
-      --accent-deep:#A9D2DE;
-      --slate:#9FC2D0;
-      --on-accent:#12222A;
+      --bg:#121E24;
+      --bg-alt:#16242B;
+      --tint:#182A33;
+      --ink:#C6CDCA;
+      --ink-strong:#E9F0EF;
+      --ink-faint:#7E8C88;
+      --line:#2A3A42;
+      --teal:#7FB6C8;
+      --teal-deep:#A6D2DE;
+      --sand:#CBBF9C;
+      --sand-ink:#CBBF9C;
+      --on-teal:#0E1A20;
     }
   }
   :root[data-theme="dark"]{
-    --ground:#15232A;
-    --band:#1B2C33;
-    --surface:#1E2F37;
-    --ink:#ECE7D6;
-    --ink-soft:#B4B7AE;
-    --ink-faint:#7F8B86;
-    --line:#33454E;
-    --accent:#7FB4C6;
-    --accent-deep:#A9D2DE;
-    --slate:#9FC2D0;
-    --on-accent:#12222A;
+    --bg:#121E24;
+    --bg-alt:#16242B;
+    --tint:#182A33;
+    --ink:#C6CDCA;
+    --ink-strong:#E9F0EF;
+    --ink-faint:#7E8C88;
+    --line:#2A3A42;
+    --teal:#7FB6C8;
+    --teal-deep:#A6D2DE;
+    --sand:#CBBF9C;
+    --sand-ink:#CBBF9C;
+    --on-teal:#0E1A20;
   }
 
   *,*::before,*::after{ box-sizing:border-box; }
-
   html{ scroll-behavior:smooth; }
-  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+  @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
 
   body{
-    margin:0;
-    background:var(--ground);
-    color:var(--ink-soft);
-    font-family:var(--sans);
-    font-size:16px;
-    line-height:1.8;
-    -webkit-font-smoothing:antialiased;
-    text-rendering:optimizeLegibility;
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:var(--font); font-size:16px; line-height:1.85;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  ::selection{ background:color-mix(in srgb, var(--teal) 26%, transparent); }
+  a{ color:var(--teal); }
+  :where(a,button,summary,input,select):focus-visible{
+    outline:2px solid var(--teal); outline-offset:3px; border-radius:3px;
   }
 
-  ::selection{ background:color-mix(in srgb, var(--accent) 30%, transparent); }
-
-  a{ color:var(--accent); }
-  :where(a,button,summary):focus-visible{
-    outline:2px solid var(--accent);
-    outline-offset:3px; border-radius:2px;
-  }
-
-  .inner{ max-width:820px; margin:0 auto; padding:0 24px; }
+  .inner{ max-width:900px; margin:0 auto; padding:0 24px; }
 
   /* ---------- nav ---------- */
   .nav{
-    position:sticky; top:0; z-index:20;
-    background:var(--ground);
-    background:color-mix(in srgb, var(--ground) 88%, transparent);
-    -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+    position:sticky; top:0; z-index:30;
+    background:color-mix(in srgb, var(--bg) 90%, transparent);
+    -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);
   }
-  .nav-inner{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.8rem 0; }
-  .nav-brand{
-    font-weight:900; font-size:1.05rem; color:var(--ink);
-    letter-spacing:-.01em; flex:0 0 auto; text-decoration:none;
-  }
-  .nav-brand span{ font-weight:400; color:var(--ink-faint); font-size:.8rem; }
-  .nav-links{
-    display:flex; gap:1.2rem; list-style:none; margin:0; padding:0;
-    font-size:.82rem; font-weight:700; letter-spacing:.02em;
-    overflow-x:auto; scrollbar-width:none;
-  }
+  .nav-inner{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.85rem 0; }
+  .nav-brand{ font-weight:700; font-size:1.02rem; color:var(--ink-strong); text-decoration:none; letter-spacing:-.01em; flex:0 0 auto; }
+  .nav-brand small{ font-weight:400; color:var(--ink-faint); font-size:.8rem; margin-left:.15rem; }
+  .nav-right{ display:flex; align-items:center; gap:1.3rem; min-width:0; }
+  .nav-links{ display:flex; gap:1.15rem; list-style:none; margin:0; padding:0; font-size:.82rem; font-weight:500; overflow-x:auto; scrollbar-width:none; }
   .nav-links::-webkit-scrollbar{ display:none; }
-  .nav-links a{
-    color:var(--slate); text-decoration:none; white-space:nowrap;
-    padding-bottom:3px; border-bottom:2px solid transparent; transition:color .2s,border-color .2s;
-  }
-  .nav-links a:hover{ color:var(--ink); border-color:var(--accent); }
+  .nav-links a{ color:var(--ink); text-decoration:none; white-space:nowrap; padding-bottom:3px; border-bottom:2px solid transparent; transition:color .2s,border-color .2s; }
+  .nav-links a:hover{ color:var(--teal); border-color:var(--teal); }
+  .nav-cta{ flex:0 0 auto; }
 
   /* ---------- buttons ---------- */
   .btn{
-    display:inline-flex; align-items:center; gap:.5rem;
-    padding:.85rem 1.7rem; font-family:var(--sans);
-    font-weight:700; font-size:.9rem; letter-spacing:.02em;
-    text-decoration:none; cursor:pointer;
-    border:1.5px solid var(--accent-deep); color:var(--accent-deep);
-    background:transparent; transition:background .2s,color .2s,border-color .2s;
+    display:inline-flex; align-items:center; justify-content:center; gap:.45rem;
+    padding:.9rem 1.6rem; border-radius:6px; border:1.5px solid transparent;
+    font-family:var(--font); font-weight:600; font-size:.92rem; letter-spacing:.01em;
+    text-decoration:none; cursor:pointer; transition:background .2s,color .2s,border-color .2s,transform .2s;
   }
-  .btn:hover{ background:var(--accent-deep); color:var(--on-accent); }
-  .btn--solid{ background:var(--accent-deep); color:var(--on-accent); }
-  .btn--solid:hover{ background:transparent; color:var(--accent-deep); }
-  .btn--light{ background:#F1ECDD; border-color:#F1ECDD; color:#21414F; }
-  .btn--light:hover{ background:transparent; color:#F1ECDD; border-color:#F1ECDD; }
+  .btn-teal{ background:var(--teal); color:var(--on-teal); }
+  .btn-teal:hover{ background:var(--teal-deep); }
+  .btn-sand{ background:var(--sand); color:#3B3520; }
+  .btn-sand:hover{ filter:brightness(.94); }
+  .btn-ghost{ border-color:var(--teal); color:var(--teal); background:transparent; }
+  .btn-ghost:hover{ background:var(--teal); color:var(--on-teal); }
+  .btn-sm{ padding:.6rem 1.1rem; font-size:.82rem; }
 
-  /* ---------- sections ---------- */
-  .sec{ padding-block:4rem; scroll-margin-top:4.75rem; }
-  .band{ background:var(--band); }
-
-  .staff{
-    position:relative; height:34px; margin-bottom:1.7rem;
-    background-image:repeating-linear-gradient(
-      color-mix(in srgb, var(--accent) 28%, transparent) 0 1px,
-      transparent 1px 11px);
-    background-position:0 6px;
-  }
-  .staff-note{
-    position:absolute; left:11%; top:12px;
-    width:9px; height:9px; border-radius:50%;
-    background:var(--accent); transform:rotate(-18deg) scaleX(1.18);
-  }
-
+  /* ---------- section scaffold ---------- */
+  .sec{ padding-block:var(--pad-sec); scroll-margin-top:4.75rem; }
+  .sec--alt{ background:var(--bg-alt); }
   .eyebrow{
-    font-size:.74rem; font-weight:700; letter-spacing:.16em;
-    color:var(--accent); margin:0 0 .6rem;
+    font-family:var(--latin); font-weight:700; font-size:.78rem;
+    letter-spacing:.16em; text-transform:uppercase; color:var(--sand-ink);
+    margin:0 0 .7rem;
   }
-  .eyebrow::before{
-    content:""; display:inline-block; width:6px; height:6px; border-radius:50%;
-    background:var(--accent); margin-right:.65em; vertical-align:middle; transform:translateY(-1px);
-  }
-
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .eyebrow{ color:var(--sand); } }
+  :root[data-theme="dark"] .eyebrow{ color:var(--sand); }
   h2{
-    font-family:var(--sans); font-weight:700; font-size:var(--fs-h2);
-    line-height:1.35; letter-spacing:-.02em; color:var(--ink);
-    margin:.15rem 0 1rem; text-wrap:balance;
+    font-family:var(--kr); font-weight:700; font-size:var(--fs-h2);
+    line-height:1.4; letter-spacing:-.02em; color:var(--ink-strong);
+    margin:.1rem 0 1.1rem; text-wrap:balance;
   }
-
-  .hint{ font-size:.82rem; color:var(--ink-faint); margin:-.35rem 0 0; }
+  .lead{ font-size:1.05rem; color:var(--ink); max-width:64ch; margin:0 0 .2rem; }
+  .hint{ font-size:.82rem; color:var(--ink-faint); margin:.6rem 0 0; }
   .edit{ color:var(--ink-faint); }
 
   .prose p{ margin:0 0 1.05em; max-width:64ch; }
   .prose p:last-child{ margin-bottom:0; }
-  .prose strong{ color:var(--ink); }
-
+  .prose strong{ color:var(--ink-strong); }
   .quote{
-    position:relative; margin:2rem 0 0; padding-left:1.7rem;
-    font-family:var(--serif); font-size:1.3rem; line-height:1.7; color:var(--ink);
-    text-wrap:balance;
-  }
-  .quote::before{
-    content:"\201C"; position:absolute; left:0; top:-.06em;
-    font-family:var(--serif); font-size:2.4rem; line-height:1; color:var(--accent);
+    margin:2rem 0 0; padding:1.3rem 0 0; border-top:2px solid var(--sand);
+    font-size:1.2rem; line-height:1.7; color:var(--ink-strong); font-weight:500; text-wrap:balance;
   }
 
-  /* ---------- hero (committed dark teal) ---------- */
-  .hero{ background:#21414F; color:#F1ECDD; padding-block:4.2rem 1.4rem; }
-  .hero .eyebrow{ color:#CFC29C; }
-  .hero .eyebrow::before{ background:#CFC29C; }
+  /* ---------- hero ---------- */
+  .hero{ background:#173039; color:#fff; text-align:center; padding-block:clamp(4rem,10vw,7rem) 2.5rem; overflow:hidden; }
+  .hero .eyebrow{ color:var(--sand); }
   .hero h1{
-    font-family:var(--sans); font-weight:900; font-size:var(--fs-hero);
-    line-height:1.22; letter-spacing:-.03em; color:#F1ECDD;
-    margin:.7rem 0 1.1rem; text-wrap:balance;
+    font-family:var(--kr); font-weight:400; font-size:var(--fs-hero);
+    line-height:1.55; letter-spacing:-.01em; color:#fff; margin:.6rem auto 0; max-width:20ch; text-wrap:balance;
   }
-  .hero .lead{ font-size:1.15rem; color:rgba(241,236,221,.9); margin:0 0 1.4rem; max-width:52ch; }
-  .hero .sign{
-    font-size:1.15rem; font-weight:700; color:#F1ECDD; letter-spacing:.02em; margin:0 0 1.3rem;
+  .hero .name{
+    font-family:var(--latin); font-weight:600; font-size:1rem; color:#fff;
+    letter-spacing:.02em; margin:1.9rem 0 .2rem;
   }
-  .hero .sign span{
-    font-weight:400; font-size:.8rem; letter-spacing:.16em; text-transform:uppercase;
-    color:rgba(241,236,221,.55); margin-left:.6rem;
-  }
-  .hero .hmeta{
-    font-size:.8rem; letter-spacing:.04em; color:rgba(241,236,221,.6); margin:0 0 1.7rem;
-  }
-  .hero .btn--light{ margin-bottom:.4rem; }
-  .hero-wave{ margin:2rem 0 .2rem; }
-  #wave{ display:block; width:100%; height:112px; }
+  .hero .name span{ font-weight:400; font-size:.76rem; letter-spacing:.18em; color:rgba(255,255,255,.55); margin-left:.55rem; }
+  .hero .meta{ font-size:.82rem; color:rgba(255,255,255,.6); margin:.1rem 0 1.7rem; }
+  .hero-wave{ margin:2.4rem auto 0; max-width:640px; }
+  #wave{ display:block; width:100%; height:110px; }
 
-  /* ---------- lists ---------- */
-  .sub-label{
-    font-size:.72rem; font-weight:700; letter-spacing:.14em;
-    color:var(--ink-faint); margin:1.9rem 0 .7rem;
+  /* ---------- statement band ---------- */
+  .statement{ background:var(--tint); text-align:center; padding-block:clamp(3rem,7vw,5rem); }
+  .statement p{
+    font-family:var(--kr); font-weight:400; font-size:var(--fs-statement);
+    line-height:1.7; letter-spacing:-.01em; color:var(--teal); margin:0; text-wrap:balance;
   }
-  .sub-label:first-of-type{ margin-top:.4rem; }
 
-  .creds{ list-style:none; margin:0; padding:0; }
-  .creds li{ position:relative; padding:.35rem 0 .35rem 1.25rem; color:var(--ink-soft); }
-  .creds li::before{
-    content:""; position:absolute; left:0; top:.95em;
-    width:7px; height:7px; border-radius:50%; background:var(--accent);
-    transform:rotate(-18deg) scaleX(1.2);
+  /* ---------- signal cards ---------- */
+  .grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.8rem; }
+  .signal{
+    background:var(--bg); border:1px solid var(--line); border-radius:12px;
+    padding:1.6rem 1.4rem;
   }
-  .creds strong{ color:var(--ink); font-weight:700; }
+  .sec--alt .signal{ background:var(--bg); }
+  .signal svg{ width:26px; height:26px; color:var(--teal); display:block; margin-bottom:.9rem; }
+  .signal h3{ font-family:var(--kr); font-weight:700; font-size:1.02rem; color:var(--ink-strong); margin:0 0 .5rem; }
+  .signal p{ margin:0; font-size:.9rem; color:var(--ink); line-height:1.7; }
+  .after-note{ margin-top:1.6rem; font-size:.95rem; color:var(--ink); max-width:64ch; }
 
-  .timeline{ list-style:none; margin:0; padding:0; }
-  .timeline li{
-    display:grid; grid-template-columns:8.5rem 1fr; gap:1rem;
-    padding:.95rem 0; border-top:1px solid var(--line); align-items:baseline;
-  }
-  .timeline li:last-child{ border-bottom:1px solid var(--line); }
-  .timeline .yr{
-    font-size:.8rem; font-weight:700; letter-spacing:.02em;
-    color:var(--accent); font-variant-numeric:tabular-nums;
-  }
-  .timeline .tl-body{ color:var(--ink-soft); }
-  .timeline .tl-body strong{ color:var(--ink); font-weight:700; }
-
-  /* ---------- cards ---------- */
-  .cards{ display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; margin-top:1.7rem; }
+  /* ---------- program cards ---------- */
+  .cards{ display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; margin-top:1.8rem; }
   .card{
-    border:1px solid var(--line); background:var(--surface); padding:1.5rem 1.4rem;
-    transition:border-color .25s, transform .25s;
+    background:var(--bg); border:1px solid var(--line); border-radius:12px;
+    padding:1.6rem 1.5rem; transition:border-color .25s, transform .25s;
   }
-  .card:hover{ border-color:var(--accent); transform:translateY(-2px); }
-  .card h3{ font-weight:700; font-size:1.12rem; letter-spacing:-.01em; color:var(--ink); margin:0 0 .7rem; }
-  .card dl{ display:grid; grid-template-columns:auto 1fr; gap:.22rem .7rem; margin:0 0 .8rem; font-size:.84rem; }
+  .card:hover{ border-color:var(--teal); transform:translateY(-2px); }
+  .card h3{ font-family:var(--kr); font-weight:700; font-size:1.1rem; color:var(--ink-strong); margin:0 0 .7rem; }
+  .card dl{ display:grid; grid-template-columns:auto 1fr; gap:.2rem .7rem; margin:0 0 .8rem; font-size:.84rem; }
   .card dt{ color:var(--ink-faint); }
-  .card dd{ margin:0; color:var(--ink-soft); }
-  .card p{ margin:0; font-size:.92rem; color:var(--ink-soft); line-height:1.7; }
+  .card dd{ margin:0; color:var(--ink); }
+  .card p{ margin:0; font-size:.92rem; color:var(--ink); line-height:1.7; }
+
+  /* ---------- career ---------- */
+  .sub-label{ font-family:var(--latin); font-size:.72rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-faint); margin:1.9rem 0 .7rem; }
+  .sub-label:first-of-type{ margin-top:.3rem; }
+  .creds{ list-style:none; margin:0; padding:0; }
+  .creds li{ position:relative; padding:.35rem 0 .35rem 1.2rem; color:var(--ink); }
+  .creds li::before{ content:""; position:absolute; left:0; top:.95em; width:6px; height:6px; border-radius:50%; background:var(--teal); }
+  .creds strong{ color:var(--ink-strong); font-weight:700; }
+  .timeline{ list-style:none; margin:0; padding:0; }
+  .timeline li{ display:grid; grid-template-columns:8.5rem 1fr; gap:1rem; padding:.95rem 0; border-top:1px solid var(--line); align-items:baseline; }
+  .timeline li:last-child{ border-bottom:1px solid var(--line); }
+  .timeline .yr{ font-size:.8rem; font-weight:700; color:var(--teal); font-variant-numeric:tabular-nums; }
+  .timeline .tl-body{ color:var(--ink); }
+  .timeline .tl-body strong{ color:var(--ink-strong); font-weight:700; }
 
   /* ---------- FAQ ---------- */
   .faq details{ border-top:1px solid var(--line); }
   .faq details:last-of-type{ border-bottom:1px solid var(--line); }
-  .faq summary{
-    list-style:none; cursor:pointer; position:relative;
-    padding:1.15rem 2.2rem 1.15rem 0; font-weight:700; color:var(--ink);
-  }
+  .faq summary{ list-style:none; cursor:pointer; position:relative; padding:1.15rem 2.2rem 1.15rem 0; font-family:var(--kr); font-weight:700; color:var(--ink-strong); }
   .faq summary::-webkit-details-marker{ display:none; }
-  .faq summary::after{
-    content:"+"; position:absolute; right:.2rem; top:.95rem;
-    font-size:1.4rem; font-weight:400; color:var(--accent); transition:transform .2s;
-  }
+  .faq summary::after{ content:"+"; position:absolute; right:.2rem; top:.9rem; font-size:1.4rem; font-weight:400; color:var(--teal); transition:transform .2s; }
   .faq details[open] summary::after{ transform:rotate(45deg); }
-  .faq .a{ padding:0 0 1.3rem; color:var(--ink-soft); max-width:64ch; }
+  .faq .a{ padding:0 0 1.3rem; color:var(--ink); max-width:64ch; }
 
   /* ---------- media tiles ---------- */
-  .tiles{ display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.7rem; }
-  .tile{ border:1px solid var(--line); background:var(--surface); padding:1.4rem 1.3rem; }
-  .tile svg{ display:block; width:100%; height:32px; color:var(--accent); margin-bottom:.9rem; }
-  .tile .plat{ font-size:.7rem; font-weight:700; letter-spacing:.14em; color:var(--accent); }
-  .tile .handle{ font-weight:700; font-size:1.02rem; color:var(--ink); margin:.25rem 0 .5rem; }
-  .tile .handle a{ color:inherit; text-decoration:none; border-bottom:1px solid var(--accent); }
-  .tile .handle a:hover{ color:var(--accent); }
-  .tile p{ margin:0; font-size:.87rem; color:var(--ink-soft); line-height:1.65; }
+  .tiles{ display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.8rem; }
+  .tile{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:1.5rem 1.35rem; }
+  .tile svg{ display:block; width:100%; height:30px; color:var(--teal); margin-bottom:.9rem; }
+  .tile .plat{ font-family:var(--latin); font-size:.7rem; font-weight:700; letter-spacing:.14em; color:var(--sand-ink); }
+  .tile .handle{ font-family:var(--kr); font-weight:700; font-size:1rem; color:var(--ink-strong); margin:.25rem 0 .5rem; }
+  .tile .handle a{ color:inherit; text-decoration:none; border-bottom:1px solid var(--teal); }
+  .tile .handle a:hover{ color:var(--teal); }
+  .tile p{ margin:0; font-size:.87rem; color:var(--ink); line-height:1.65; }
 
-  /* ---------- testimonials ---------- */
-  .quotes{ display:grid; gap:1.6rem; margin-top:1.7rem; }
-  .tq{ position:relative; padding-left:1.7rem; margin:0; }
-  .tq::before{
-    content:"\201C"; position:absolute; left:0; top:-.1em;
-    font-family:var(--serif); font-size:2.2rem; line-height:1; color:var(--accent);
-  }
-  .tq p{ margin:0 0 .45rem; font-family:var(--serif); font-size:1.06rem; line-height:1.7; color:var(--ink); }
-  .tq cite{ font-style:normal; font-size:.8rem; letter-spacing:.05em; color:var(--ink-faint); }
+  /* ---------- reviews ---------- */
+  .reviews{ display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; margin-top:1.8rem; }
+  .rv{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:1.5rem 1.45rem; }
+  .rv .tag{ font-family:var(--latin); font-size:.72rem; font-weight:700; letter-spacing:.1em; color:var(--sand-ink); }
+  .rv p{ margin:.55rem 0 .7rem; font-family:var(--kr); font-size:1rem; line-height:1.7; color:var(--ink-strong); }
+  .rv cite{ font-style:normal; font-size:.8rem; color:var(--ink-faint); }
 
-  /* ---------- cta band (committed dark teal) ---------- */
-  .cta{ background:#21414F; color:#F1ECDD; text-align:center; padding-block:3.6rem; }
-  .cta-lead{
-    font-size:clamp(1.4rem,3vw,1.9rem); font-weight:700; letter-spacing:-.02em;
-    line-height:1.45; color:#F1ECDD; margin:0 0 1.7rem; text-wrap:balance;
-  }
+  /* ---------- cta ---------- */
+  .cta{ background:#285A71; color:#fff; text-align:center; padding-block:clamp(3rem,7vw,4.5rem); }
+  .cta p{ font-family:var(--kr); font-weight:700; font-size:clamp(1.3rem,3vw,1.85rem); line-height:1.5; margin:0 0 1.6rem; color:#fff; text-wrap:balance; }
 
   /* ---------- contact ---------- */
-  .contact-list{ margin:1.5rem 0 0; border-top:1px solid var(--line); }
-  .contact-list div{
-    display:grid; grid-template-columns:9rem 1fr; gap:1rem;
-    padding:1rem 0; border-bottom:1px solid var(--line); align-items:baseline;
-  }
-  .c-label{ font-size:.76rem; font-weight:700; letter-spacing:.1em; color:var(--accent); }
-  .c-val{ color:var(--ink-soft); }
-  .c-val a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--accent); }
-  .c-val a:hover{ color:var(--accent); }
+  .contact-list{ margin:1.6rem 0 0; border-top:1px solid var(--line); }
+  .contact-list div{ display:grid; grid-template-columns:9rem 1fr; gap:1rem; padding:1rem 0; border-bottom:1px solid var(--line); align-items:baseline; }
+  .c-label{ font-family:var(--latin); font-size:.74rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--sand-ink); }
+  .c-val{ color:var(--ink); }
+  .c-val a{ color:var(--ink-strong); text-decoration:none; border-bottom:1px solid var(--teal); }
+  .c-val a:hover{ color:var(--teal); }
   .c-val .note{ display:block; font-size:.8rem; color:var(--ink-faint); margin-top:.15rem; }
-  .btns{ display:flex; flex-wrap:wrap; gap:.75rem; margin-top:1.8rem; }
+
+  .apply{ margin-top:2rem; background:var(--tint); border:1px solid var(--line); border-radius:16px; padding:clamp(1.6rem,4vw,2.6rem); }
+  .apply h3{ font-family:var(--kr); font-weight:700; font-size:1.05rem; color:var(--ink-strong); margin:0 0 1.2rem; }
+  .apply ol{ counter-reset:step; list-style:none; margin:0 0 1.6rem; padding:0; display:grid; gap:.9rem; }
+  .apply li{ position:relative; padding-left:2.6rem; color:var(--ink); font-size:.95rem; }
+  .apply li::before{
+    counter-increment:step; content:counter(step);
+    position:absolute; left:0; top:.05rem; width:1.75rem; height:1.75rem; border-radius:50%;
+    background:var(--teal); color:var(--on-teal); font-size:.82rem; font-weight:700;
+    display:grid; place-items:center;
+  }
+  .btns{ display:flex; flex-wrap:wrap; gap:.7rem; }
 
   /* ---------- footer ---------- */
-  .foot{ background:var(--band); border-top:1px solid var(--line); padding:2.6rem 0 3rem; text-align:center; }
-  .foot .mark{
-    width:9px; height:9px; border-radius:50%; background:var(--accent);
-    display:inline-block; transform:rotate(-18deg) scaleX(1.18); margin-bottom:.9rem;
-  }
-  .foot p{ margin:.2rem 0; font-size:.82rem; color:var(--ink-faint); letter-spacing:.03em; }
+  .foot{ background:var(--bg); border-top:1px solid var(--line); padding:2.6rem 0 3rem; text-align:center; }
+  .foot .mark{ width:8px; height:8px; border-radius:50%; background:var(--teal); display:inline-block; margin-bottom:.9rem; }
+  .foot p{ margin:.2rem 0; font-size:.82rem; color:var(--ink-faint); }
 
   /* ---------- reveal ---------- */
-  [data-reveal]{ opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .7s ease; }
+  [data-reveal]{ opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease; }
   [data-reveal].in{ opacity:1; transform:none; }
-  @media (prefers-reduced-motion: reduce){
+  @media (prefers-reduced-motion:reduce){
     [data-reveal]{ opacity:1; transform:none; transition:none; }
-    .card:hover,.btn:hover{ transform:none; }
+    .card:hover{ transform:none; }
   }
 
   /* ---------- responsive ---------- */
+  @media (max-width:760px){
+    .grid3{ grid-template-columns:1fr; }
+    .tiles{ grid-template-columns:1fr; }
+  }
   @media (max-width:640px){
     .cards{ grid-template-columns:1fr; }
-    .tiles{ grid-template-columns:1fr; }
+    .reviews{ grid-template-columns:1fr; }
+    .nav-links{ display:none; }
   }
   @media (max-width:560px){
     .timeline li{ grid-template-columns:1fr; gap:.15rem; }
@@ -336,25 +293,27 @@
 
 <nav class="nav">
   <div class="inner nav-inner">
-    <a class="nav-brand" href="#top">정수미 <span>음악치료</span></a>
-    <ul class="nav-links">
-      <li><a href="#about">소개</a></li>
-      <li><a href="#career">경력·자격</a></li>
-      <li><a href="#programs">프로그램</a></li>
-      <li><a href="#media">콘텐츠</a></li>
-      <li><a href="#contact">문의</a></li>
-    </ul>
+    <a class="nav-brand" href="#top">정수미 <small>음악치료</small></a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#about">소개</a></li>
+        <li><a href="#signals">신호</a></li>
+        <li><a href="#programs">프로그램</a></li>
+        <li><a href="#career">경력</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <a class="btn btn-teal btn-sm nav-cta" href="#contact">상담 문의</a>
+    </div>
   </div>
 </nav>
 
 <header id="top" class="hero">
   <div class="inner" data-reveal>
-    <p class="eyebrow">임상음악전문가 1급 · 자격번호 제593호</p>
-    <h1>지친 마음에도,<br>회복의 리듬이 필요합니다</h1>
-    <p class="lead">심상음악치료(GIM)로 마음의 온전한 회복과 성장을 돕습니다.</p>
-    <p class="sign">정수미 <span>Jeong Soo Mee</span></p>
-    <p class="hmeta">세종 · 대전 기반 &nbsp;·&nbsp; 개인 · 그룹 · 기관 출강 &nbsp;·&nbsp; (사)한국음악치료학회</p>
-    <a class="btn btn--light" href="#contact">상담 예약 문의</a>
+    <p class="eyebrow">Music Therapy</p>
+    <h1>견디기 힘든 하루의 무게,<br>음악으로 조금씩 덜어냅니다</h1>
+    <p class="name">정수미 <span>Jeong Soo Mee</span></p>
+    <p class="meta">임상음악전문가 1급 · 자격번호 제593호 · 세종 · 대전 기반</p>
+    <a class="btn btn-sand" href="#contact">상담 문의하기</a>
     <div class="hero-wave" aria-hidden="true"><canvas id="wave"></canvas></div>
   </div>
 </header>
@@ -363,8 +322,7 @@
 
   <section id="about" class="sec">
     <div class="inner" data-reveal>
-      <div class="staff" aria-hidden="true"><span class="staff-note"></span></div>
-      <p class="eyebrow">소개</p>
+      <p class="eyebrow">Introduce</p>
       <h2>안녕하세요, 임상음악전문가 정수미입니다</h2>
       <div class="prose">
         <p>저는 음악이 가진 힘을 믿습니다. 말로 다 하지 못하는 감정도 리듬과 멜로디 안에서는
@@ -380,10 +338,73 @@
     </div>
   </section>
 
-  <section id="career" class="sec band">
+  <section id="signals" class="sec sec--alt">
     <div class="inner" data-reveal>
-      <div class="staff" aria-hidden="true"><span class="staff-note"></span></div>
-      <p class="eyebrow">경력 · 자격</p>
+      <p class="eyebrow">Signals</p>
+      <h2>이런 신호가 있다면, 마음이 보내는 편지입니다</h2>
+      <p class="lead">과도한 스트레스는 자율신경의 균형을 무너뜨리고,
+        정서 · 신체 · 인지 세 방향으로 신호를 보냅니다.</p>
+      <div class="grid3">
+        <article class="signal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 8.6a5 5 0 0 0-8.8-3.2A5 5 0 0 0 3.2 8.6c0 5 6.4 9.4 8.8 11 2.4-1.6 8.8-6 8.8-11Z"/></svg>
+          <h3>정서적 신호</h3>
+          <p>불안, 우울감, 무기력, 쉽게 올라오는 짜증과 예민함.</p>
+        </article>
+        <article class="signal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg>
+          <h3>신체적 신호</h3>
+          <p>수면장애, 두통, 어깨·가슴의 긴장, 소화 불편.</p>
+        </article>
+        <article class="signal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 6 1V4a3 3 0 0 0-1-1Z"/><path d="M15 3a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-6 1"/></svg>
+          <h3>인지적 신호</h3>
+          <p>집중력 저하, 기억력 저하, 머릿속이 멍하고 정리되지 않는 느낌.</p>
+        </article>
+      </div>
+      <p class="after-note">음악치료는 이 신호들을 억누르지 않습니다.
+        안전하게 표현하고, 리듬을 통해 조금씩 조율해 나가도록 돕습니다.</p>
+    </div>
+  </section>
+
+  <section class="statement">
+    <div class="inner" data-reveal>
+      <p>음악은 약을 대신하지 않습니다.<br>다만, 회복으로 가는 길을 함께 걷습니다.</p>
+    </div>
+  </section>
+
+  <section id="programs" class="sec">
+    <div class="inner" data-reveal>
+      <p class="eyebrow">Program</p>
+      <h2>함께할 수 있는 것들</h2>
+      <p class="hint">회기 수와 시간은 예시이며, 대상과 목표에 따라 조율합니다.</p>
+      <div class="cards">
+        <article class="card">
+          <h3>개인 음악치료</h3>
+          <dl><dt>대상</dt><dd>청소년 · 성인</dd><dt>회기</dt><dd>주 1회 · 50분 기준</dd></dl>
+          <p>심상음악치료(GIM)를 중심으로 한 1:1 세션. 초기 상담으로 방향을 함께 설계한 뒤 진행합니다.</p>
+        </article>
+        <article class="card">
+          <h3>그룹 음악치료</h3>
+          <dl><dt>대상</dt><dd>3–6인 소그룹</dd><dt>회기</dt><dd>주 1회 · 60분 기준</dd></dl>
+          <p>감상과 즉흥연주로 정서 표현과 상호작용, 서로에 대한 이해를 넓히는 시간입니다.</p>
+        </article>
+        <article class="card">
+          <h3>교육 · 강의</h3>
+          <dl><dt>대상</dt><dd>종사자 · 교사 · 보호자</dd><dt>형태</dt><dd>특강 90분 / 워크숍 3시간</dd></dl>
+          <p>현장에서 바로 쓸 수 있는 음악 활동과 심상음악치료의 기초를 함께 나눕니다.</p>
+        </article>
+        <article class="card">
+          <h3>기관 출강 · 자문</h3>
+          <dl><dt>대상</dt><dd>센터 · 학교 · 병원 · 복지관</dd><dt>형태</dt><dd>정기 출강 / 프로그램 자문</dd></dl>
+          <p>현장에 맞는 음악치료 커리큘럼을 설계하고 운영을 돕습니다.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="career" class="sec sec--alt">
+    <div class="inner" data-reveal>
+      <p class="eyebrow">Career</p>
       <h2>걸어온 길</h2>
 
       <p class="sub-label">자격</p>
@@ -400,22 +421,10 @@
 
       <p class="sub-label">수련 · 연수</p>
       <ul class="timeline">
-        <li>
-          <span class="yr">2021 – 2026</span>
-          <span class="tl-body"><strong>한국음악치료학회</strong> 보수교육 및 정기 학술대회 지속 이수 — 누적 615점</span>
-        </li>
-        <li>
-          <span class="yr">2022 – 2025</span>
-          <span class="tl-body"><strong>GIM한국심상음악치료협회 · 한국GIM협회</strong> 보수교육 이수 — 심상음악치료 심화 수련</span>
-        </li>
-        <li>
-          <span class="yr">2022</span>
-          <span class="tl-body"><strong>국제예술심리치료협회(ISAP)</strong> 워크샵 이수</span>
-        </li>
-        <li>
-          <span class="yr">2022</span>
-          <span class="tl-body"><strong>숙명여자대학교 음악치료대학원</strong> 25주년 기념 학술 행사 참여</span>
-        </li>
+        <li><span class="yr">2021 – 2026</span><span class="tl-body"><strong>한국음악치료학회</strong> 보수교육 및 정기 학술대회 지속 이수 — 누적 615점</span></li>
+        <li><span class="yr">2022 – 2025</span><span class="tl-body"><strong>GIM한국심상음악치료협회 · 한국GIM협회</strong> 보수교육 이수 — 심상음악치료 심화 수련</span></li>
+        <li><span class="yr">2022</span><span class="tl-body"><strong>국제예술심리치료협회(ISAP)</strong> 워크샵 이수</span></li>
+        <li><span class="yr">2022</span><span class="tl-body"><strong>숙명여자대학교 음악치료대학원</strong> 25주년 기념 학술 행사 참여</span></li>
       </ul>
 
       <p class="sub-label">연구</p>
@@ -431,54 +440,10 @@
     </div>
   </section>
 
-  <section id="programs" class="sec">
-    <div class="inner" data-reveal>
-      <div class="staff" aria-hidden="true"><span class="staff-note"></span></div>
-      <p class="eyebrow">프로그램</p>
-      <h2>함께할 수 있는 것들</h2>
-      <p class="hint">회기 수와 시간은 예시이며, 대상과 목표에 따라 조율합니다.</p>
-      <div class="cards">
-        <article class="card">
-          <h3>개인 음악치료</h3>
-          <dl>
-            <dt>대상</dt><dd>청소년 · 성인</dd>
-            <dt>회기</dt><dd>주 1회 · 50분 기준</dd>
-          </dl>
-          <p>심상음악치료(GIM)를 중심으로 한 1:1 세션. 초기 상담으로 방향을 함께 설계한 뒤 진행합니다.</p>
-        </article>
-        <article class="card">
-          <h3>그룹 음악치료</h3>
-          <dl>
-            <dt>대상</dt><dd>3–6인 소그룹</dd>
-            <dt>회기</dt><dd>주 1회 · 60분 기준</dd>
-          </dl>
-          <p>감상과 즉흥연주로 정서 표현과 상호작용, 서로에 대한 이해를 넓히는 시간입니다.</p>
-        </article>
-        <article class="card">
-          <h3>교육 · 강의</h3>
-          <dl>
-            <dt>대상</dt><dd>종사자 · 교사 · 보호자</dd>
-            <dt>형태</dt><dd>특강 90분 / 워크숍 3시간</dd>
-          </dl>
-          <p>현장에서 바로 쓸 수 있는 음악 활동과 심상음악치료의 기초를 함께 나눕니다.</p>
-        </article>
-        <article class="card">
-          <h3>기관 출강 · 자문</h3>
-          <dl>
-            <dt>대상</dt><dd>센터 · 학교 · 병원 · 복지관</dd>
-            <dt>형태</dt><dd>정기 출강 / 프로그램 자문</dd>
-          </dl>
-          <p>현장에 맞는 음악치료 커리큘럼을 설계하고 운영을 돕습니다.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq" class="sec band">
+  <section id="faq" class="sec">
     <div class="inner faq" data-reveal>
-      <div class="staff" aria-hidden="true"><span class="staff-note"></span></div>
-      <p class="eyebrow">자주 묻는 질문</p>
-      <h2>궁금하신 점</h2>
+      <p class="eyebrow">FAQ</p>
+      <h2>자주 묻는 질문</h2>
       <details>
         <summary>음악을 잘 몰라도, 악기를 다룰 줄 몰라도 괜찮나요?</summary>
         <div class="a">네, 전혀 문제없습니다. 연주 실력이나 음악적 재능은 필요하지 않습니다.
@@ -506,31 +471,28 @@
     </div>
   </section>
 
-  <section id="media" class="sec">
+  <section id="media" class="sec sec--alt">
     <div class="inner" data-reveal>
-      <div class="staff" aria-hidden="true"><span class="staff-note"></span></div>
-      <p class="eyebrow">콘텐츠 활동</p>
+      <p class="eyebrow">Content</p>
       <h2>기록하고, 나눕니다</h2>
-      <div class="prose">
-        <p>치료실 밖에서는 음악치료 이야기를 콘텐츠로 풀어냅니다.
-          전문적인 내용을 조금 더 가깝고 쉽게 전하려 합니다.</p>
-      </div>
+      <p class="lead">치료실 밖에서는 음악치료 이야기를 콘텐츠로 풀어냅니다.
+        전문적인 내용을 조금 더 가깝고 쉽게 전하려 합니다.</p>
       <div class="tiles">
         <article class="tile">
           <svg viewBox="0 0 120 24" preserveAspectRatio="none"><path d="M0 12 Q10 1 20 12 T40 12 T60 12 T80 12 T100 12 T120 12" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
-          <p class="plat">INSTAGRAM</p>
+          <p class="plat">Instagram</p>
           <p class="handle"><a href="https://www.instagram.com/the_go_woon_">@the_go_woon_</a></p>
           <p>세션 후기와 일상, 짧은 음악치료 이야기를 나눕니다.</p>
         </article>
         <article class="tile">
           <svg viewBox="0 0 120 24" preserveAspectRatio="none"><path d="M0 12 Q10 4 20 12 T40 12 Q50 2 60 12 T80 12 Q90 5 100 12 T120 12" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
-          <p class="plat">YOUTUBE</p>
+          <p class="plat">YouTube</p>
           <p class="handle">채널 준비 중</p>
           <p>음악치료사의 브이로그와 정보 영상을 준비하고 있습니다.</p>
         </article>
         <article class="tile">
           <svg viewBox="0 0 120 24" preserveAspectRatio="none"><path d="M0 12 Q10 8 20 12 T40 12 Q50 0 60 12 T80 12 T100 12 Q110 7 120 12" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
-          <p class="plat">COLLABORATION</p>
+          <p class="plat">Collaboration</p>
           <p class="handle">협업 · 출연</p>
           <p>교육 · 심리 · 웰니스 분야의 캠페인과 인터뷰 제안을 환영합니다.</p>
         </article>
@@ -538,22 +500,29 @@
     </div>
   </section>
 
-  <section id="reviews" class="sec band">
+  <section id="reviews" class="sec">
     <div class="inner" data-reveal>
-      <div class="staff" aria-hidden="true"><span class="staff-note"></span></div>
-      <p class="eyebrow">후기</p>
+      <p class="eyebrow">Healing Stories</p>
       <h2>함께한 분들의 말</h2>
       <p class="hint">아래는 배치 예시입니다. 실제 받으신 후기로 교체해 주세요.</p>
-      <div class="quotes">
-        <blockquote class="tq">
+      <div class="reviews">
+        <blockquote class="rv">
+          <span class="tag">🎧 Review 1</span>
           <p>음악을 들으며 떠오른 장면들을 이야기하다 보니, 오래 눌러둔 감정이 자연스럽게 풀렸어요.</p>
           <cite>— 개인 세션 참여자</cite>
         </blockquote>
-        <blockquote class="tq">
+        <blockquote class="rv">
+          <span class="tag">🎧 Review 2</span>
           <p>말로 설명하기 어려웠던 마음이, 그룹 안에서 소리로 오가며 조금씩 가벼워졌습니다.</p>
           <cite>— 그룹 세션 참여자</cite>
         </blockquote>
-        <blockquote class="tq">
+        <blockquote class="rv">
+          <span class="tag">🎧 Review 3</span>
+          <p>계속 멍하고 피곤했는데, 세션 뒤에는 집중이 잘 되고 머릿속이 정리되는 느낌이에요.</p>
+          <cite>— 개인 세션 참여자</cite>
+        </blockquote>
+        <blockquote class="rv">
+          <span class="tag">🎧 Review 4</span>
           <p>강의가 어찌나 실용적이던지, 다음 학기에 다시 모셨습니다.</p>
           <cite>— 교육 담당자</cite>
         </blockquote>
@@ -563,43 +532,52 @@
 
   <section class="cta">
     <div class="inner" data-reveal>
-      <p class="cta-lead">마음의 회복을 위한 시간,<br>지금 시작하세요</p>
-      <a class="btn btn--light" href="#contact">상담 예약 문의</a>
+      <p>마음의 회복을 위한 시간,<br>지금 시작하세요</p>
+      <a class="btn btn-sand" href="#contact">상담 문의하기</a>
     </div>
   </section>
 
-  <section id="contact" class="sec">
+  <section id="contact" class="sec sec--alt">
     <div class="inner" data-reveal>
-      <div class="staff" aria-hidden="true"><span class="staff-note"></span></div>
-      <p class="eyebrow">문의 · 예약</p>
+      <p class="eyebrow">Contact</p>
       <h2>편하게 연락 주세요</h2>
       <div class="prose">
         <p>아래 채널 어디로든 괜찮습니다. 문의하실 때 <strong>대상 연령</strong>,
           <strong>희망 지역·요일</strong>, <strong>원하시는 목표</strong>를 함께 보내주시면
           더 빠르게 안내드릴 수 있어요.</p>
       </div>
+
       <div class="contact-list">
         <div>
-          <span class="c-label">인스타그램 DM</span>
+          <span class="c-label">Instagram DM</span>
           <span class="c-val"><a href="https://www.instagram.com/the_go_woon_">@the_go_woon_</a></span>
         </div>
         <div>
-          <span class="c-label">카카오톡 채널</span>
+          <span class="c-label">KakaoTalk</span>
           <span class="c-val">채널 개설 후 연결 예정
             <span class="note">채널 주소를 알려주시면 버튼과 링크에 넣겠습니다.</span>
           </span>
         </div>
         <div>
-          <span class="c-label">전화 · 문자</span>
+          <span class="c-label">Phone</span>
           <span class="c-val">010-0000-0000
             <span class="note">공개할 번호를 알려주시면 넣겠습니다. 상담 중에는 문자로 남겨주세요.</span>
           </span>
         </div>
       </div>
-      <div class="btns">
-        <a class="btn btn--solid" href="https://www.instagram.com/the_go_woon_">인스타그램 열기</a>
-        <a class="btn" href="#contact">카카오톡 채널</a>
-        <a class="btn" href="#contact">전화하기</a>
+
+      <div class="apply">
+        <h3>상담 신청은 이렇게 진행됩니다</h3>
+        <ol>
+          <li>인스타그램 DM 또는 전화·문자로 문의를 남깁니다.</li>
+          <li>대상 연령 · 희망 지역과 요일 · 원하시는 목표를 전해 주세요.</li>
+          <li>초기 상담 일정을 잡고, 함께 방향과 회기 계획을 설계합니다.</li>
+        </ol>
+        <div class="btns">
+          <a class="btn btn-teal" href="https://www.instagram.com/the_go_woon_">인스타그램으로 문의</a>
+          <a class="btn btn-ghost" href="#contact">전화 · 문자</a>
+        </div>
+        <p class="hint">온라인 신청 폼(구글폼 · 네이버폼) 연결을 원하시면 알려주세요. 이 자리에 바로 넣어 드립니다.</p>
       </div>
     </div>
   </section>
@@ -622,7 +600,7 @@
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var dpr = Math.min(window.devicePixelRatio || 1, 2);
   var w = 0, h = 0;
-  var COLOR = '#CFC29C';
+  var COLOR = '#CEC5A9';
 
   function size(){
     w = c.clientWidth; h = c.clientHeight;
@@ -633,9 +611,9 @@
   window.addEventListener('resize', size);
 
   var lines = [
-    { amp:12, len:0.011, sp:0.55,  off:0,   alpha:0.60 },
-    { amp:18, len:0.007, sp:-0.34, off:1.7, alpha:0.32 },
-    { amp:7,  len:0.017, sp:0.85,  off:3.4, alpha:0.20 }
+    { amp:11, len:0.012, sp:0.55,  off:0,   alpha:0.65 },
+    { amp:17, len:0.007, sp:-0.34, off:1.7, alpha:0.34 },
+    { amp:7,  len:0.018, sp:0.85,  off:3.4, alpha:0.20 }
   ];
 
   function draw(t){

@@ -269,6 +269,32 @@
     max-width:24ch; text-wrap:balance;
   }
 
+  /* ---------- photo carousel ---------- */
+  .carousel{ position:relative; margin-top:1.7rem; }
+  .carousel-viewport{ overflow:hidden; border:1px solid var(--line); border-radius:16px; background:var(--bg-alt); }
+  .carousel-track{ display:flex; margin:0; padding:0; list-style:none; transition:transform .5s cubic-bezier(.4,0,.2,1); }
+  .carousel-slide{ flex:0 0 100%; min-width:0; }
+  .carousel-slide img{ display:block; width:100%; aspect-ratio:3/2; object-fit:cover; background:var(--bg-alt); }
+  .carousel-btn{
+    position:absolute; top:50%; transform:translateY(-50%); z-index:2;
+    width:40px; height:40px; border-radius:50%; padding:0; cursor:pointer;
+    display:grid; place-items:center; font-size:1.4rem; line-height:1;
+    border:1px solid var(--line); color:var(--ink-strong);
+    background:color-mix(in srgb, var(--bg) 80%, transparent);
+    -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+    box-shadow:0 2px 10px rgba(0,0,0,.18); transition:background .2s;
+  }
+  .carousel-btn:hover{ background:var(--bg); }
+  .carousel-prev{ left:12px; }
+  .carousel-next{ right:12px; }
+  .carousel-dots{ display:flex; justify-content:center; gap:.5rem; margin-top:.9rem; }
+  .carousel-dots button{
+    width:8px; height:8px; border-radius:50%; padding:0; border:0; cursor:pointer;
+    background:var(--line); transition:background .2s, transform .2s;
+  }
+  .carousel-dots button[aria-selected="true"]{ background:var(--teal); transform:scale(1.35); }
+  @media (prefers-reduced-motion:reduce){ .carousel-track{ transition:none; } }
+
   /* ---------- cta ---------- */
   .cta{ background:#2C7A6B; color:#fff; text-align:center; padding-block:clamp(3.4rem,7vw,5rem); }
   .cta p{ font-family:var(--kr); font-weight:700; font-size:clamp(1.3rem,3vw,1.85rem); line-height:1.5; margin:0 0 1.6rem; color:#fff; text-wrap:balance; }
@@ -445,7 +471,29 @@
     </div>
   </section>
 
-  <section id="signals" class="sec sec--alt">
+  <section id="studio" class="sec sec--alt">
+    <div class="inner" data-reveal>
+      <p class="eyebrow">In the Room</p>
+      <h2>치료실에서</h2>
+      <div class="carousel" data-carousel aria-roledescription="carousel" aria-label="치료실 사진">
+        <div class="carousel-viewport">
+          <ul class="carousel-track">
+            <li class="carousel-slide">
+              <img src="assets/studio-1.jpg" alt="핸드벨·윈드차임·타악기가 있는 치료실에서 앉아 있는 음악치료사 정수미" loading="lazy" width="1440" height="960">
+            </li>
+            <li class="carousel-slide">
+              <img src="assets/studio-2.jpg" alt="치료실에서 클래식 기타를 연주하는 음악치료사 정수미" loading="lazy" width="1440" height="960">
+            </li>
+          </ul>
+        </div>
+        <button class="carousel-btn carousel-prev" type="button" aria-label="이전 사진">&#8249;</button>
+        <button class="carousel-btn carousel-next" type="button" aria-label="다음 사진">&#8250;</button>
+        <div class="carousel-dots" role="tablist" aria-label="사진 선택"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="signals" class="sec">
     <div class="inner" data-reveal>
       <p class="eyebrow">Signals</p>
       <h2>이런 신호가 있다면, 마음이 보내는 편지입니다</h2>
@@ -790,6 +838,66 @@
       nav.classList.remove('open');
       btn.setAttribute('aria-expanded', 'false');
     });
+  });
+})();
+
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('[data-carousel]').forEach(function(root){
+    var track = root.querySelector('.carousel-track');
+    var slides = Array.prototype.slice.call(root.querySelectorAll('.carousel-slide'));
+    var prev = root.querySelector('.carousel-prev');
+    var next = root.querySelector('.carousel-next');
+    var dotsWrap = root.querySelector('.carousel-dots');
+    if(!track || slides.length === 0) return;
+    var i = 0, timer = null;
+
+    var dots = slides.map(function(_, n){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('role', 'tab');
+      b.setAttribute('aria-label', (n + 1) + '번 사진');
+      b.addEventListener('click', function(){ go(n); rest(); });
+      dotsWrap && dotsWrap.appendChild(b);
+      return b;
+    });
+
+    function render(){
+      track.style.transform = 'translateX(-' + (i * 100) + '%)';
+      dots.forEach(function(d, n){ d.setAttribute('aria-selected', n === i ? 'true' : 'false'); });
+    }
+    function go(n){ i = (n + slides.length) % slides.length; render(); }
+    function nextSlide(){ go(i + 1); }
+    function prevSlide(){ go(i - 1); }
+    function start(){ if(!reduce && slides.length > 1 && !timer) timer = setInterval(nextSlide, 4500); }
+    function stop(){ if(timer){ clearInterval(timer); timer = null; } }
+    function rest(){ stop(); start(); }
+
+    prev && prev.addEventListener('click', function(){ prevSlide(); rest(); });
+    next && next.addEventListener('click', function(){ nextSlide(); rest(); });
+
+    var x0 = null;
+    root.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; }, { passive: true });
+    root.addEventListener('touchend', function(e){
+      if(x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0;
+      if(Math.abs(dx) > 40){ (dx < 0 ? nextSlide : prevSlide)(); rest(); }
+      x0 = null;
+    });
+
+    root.addEventListener('mouseenter', stop);
+    root.addEventListener('mouseleave', start);
+    root.addEventListener('focusin', stop);
+    root.addEventListener('focusout', start);
+
+    if(slides.length < 2){
+      prev && (prev.style.display = 'none');
+      next && (next.style.display = 'none');
+      dotsWrap && (dotsWrap.style.display = 'none');
+    }
+
+    render();
+    start();
   });
 })();
 </script>

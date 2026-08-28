@@ -2,6 +2,18 @@
 
 배경/프로필 사진을 이 폴더에 넣습니다. (권장: 가로 1600px 이상, JPG, 각 300KB 내외로 압축)
 
+## 치료실 사진 슬라이드 (필수 파일)
+
+"치료실에서" 섹션의 가로 슬라이드는 아래 파일 이름을 그대로 사용합니다. 이 폴더에 저장만 하면 바로 표시됩니다.
+
+| 파일 이름 | 내용 |
+|-----------|------|
+| `studio-1.jpg` | 핸드벨·타악기 앞에 앉아 있는 사진 |
+| `studio-2.jpg` | 기타를 연주하는 사진 |
+
+- 사진을 더 추가하려면 `index.html`의 `<ul class="carousel-track">` 안에 `<li class="carousel-slide"><img src="assets/studio-3.jpg" alt="..."></li>` 를 추가하면 됩니다. (슬라이드 개수·점 인디케이터는 자동)
+- 저장 후 `git add assets && git commit -m "add studio photos"` 하면 자동으로 배포됩니다.
+
 ## 사진 교체 방법
 
 `index.html` 상단 `:root` 안의 자리표시자를 실제 파일 경로로 바꾸면 됩니다.
